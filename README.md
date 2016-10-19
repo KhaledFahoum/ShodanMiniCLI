@@ -20,6 +20,7 @@ Run in script mode: (print to stdout and exit)
 - `--before <MAX_DATE>`: Specify latest date (e.g: "05/12/2016", "05-12-16")
 - `--after <MIN_DATE>`: Specify oldest date (e.g: "26/10/1995", "26-10-95")
 
+######Note: as usual, parameters with whitespaces in them (e.g: "New York") must be quoted.
 
 
 
