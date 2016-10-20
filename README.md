@@ -4,10 +4,10 @@ Unofficial Shodan command-line interface. Discover popular user-shared search qu
 **Usage:**
 
 Run in interactive mode:
-- `python SMC.py --key <YOUR_SHODAN_API_KEY>`
+- `python smc.py --key <YOUR_SHODAN_API_KEY>`
 
 Run in script mode: (print to stdout and exit)
-- `python SMC.py --key <YOUR_SHODAN_API_KEY> [options]`
+- `python smc.py --key <YOUR_SHODAN_API_KEY> [options]`
 
 [options] include:
 - `--query <SEARCH_QUERY>`: General search query (e.g: "Akamai server")
