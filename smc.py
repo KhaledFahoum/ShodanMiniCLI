@@ -1,8 +1,8 @@
 import shodan
 import sys
 import argparse
-from utils import HelpMessage, quote_string, check_int
 import utils
+from utils import HelpMessage, quote_string, check_int
 
 # Refer to https://www.exploit-db.com/docs/33859.pdf for Shodan API info
 
@@ -97,7 +97,6 @@ def print_search_result_header():
     print "".join(word.ljust(column_width) for word in header)
 
 
-# TEMPORARY , TODO !!
 def print_host_result(host):
     ports = ''
     hostnames = ''
