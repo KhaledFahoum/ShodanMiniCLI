@@ -63,6 +63,7 @@ class CustomParser:
         if key is -1:
             key = raw_input("Enter your Shodan API key: ")
         try:
+            key = key.strip()
             self.api = shodan.Shodan(key)
             self.api.info() # testing if successfully logged-in
             print 'Logged-in to Shodan.'
@@ -71,11 +72,11 @@ class CustomParser:
             CustomParser.handle_login(self, -1)
 
     def handle_arguments(self, args):
-        args.query = raw_input('Enter search query (ENTER for wildcard): ')
+        args.query = raw_input('Enter search query (<ENTER> for wildcard): ')
         filters_answer = raw_input('Apply optional search filters? (yes/no): ')
         if any(filters_answer.lower() == answer for answer in positive_answers):
             padding = ': '
-            print 'Press ENTER to skip filter.'
+            print 'Press <ENTER> to skip filter.'
             args.host = raw_input(HelpMessage.host_help + padding)
             args.port = raw_input(HelpMessage.port_help + padding)
             args.city = raw_input(HelpMessage.city_help + padding)

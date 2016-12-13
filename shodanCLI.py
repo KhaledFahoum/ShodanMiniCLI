@@ -6,7 +6,7 @@ import utils
 
 # Refer to https://www.exploit-db.com/docs/33859.pdf for Shodan API info
 
-column_width = 30
+column_width = 32
 separator_width = 60
 batch_size = -1         # '-1' = infinite
 index = -1              # Number of currently displayed search results.
@@ -85,7 +85,7 @@ def print_search_result(result, index):
     diff = ip_port_max_len - len(ip_str) - 5 - 1    # 5 = max port len
     diff2 = 1+7 - len(asn)                            # 7 = max asn len
     diff3 = 6 - len(str(index))
-    row = ['[#'+str(index)+']'+' '*diff3+ip_str+' '*diff+':'+port_str,
+    row = ['[#'+str(index)+']'+' '*diff3+' '*diff+ip_str+':'+port_str,
           organization, domains, asn+' '*diff2+'- '+isp,
            (str(result['location']['city'])+', '+
             str(result['location']['country_name']))[:max_len]]
@@ -93,7 +93,7 @@ def print_search_result(result, index):
 
 
 def print_search_result_header():
-    header = ['#'+' '*19+'IP:PORT', ' '*4+'ORGANIZATION', 'DOMAIN', '    ASN - ISP', 'LOCATION']
+    header = ['#'+' '*19+'IP:PORT', ' '*4+'ORGANIZATION', ' '*4+'DOMAIN', ' '*3+'ASN - ISP', 'LOCATION']
     print "".join(word.ljust(column_width) for word in header)
 
 
